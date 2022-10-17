@@ -40,7 +40,6 @@ class UserModel extends BaseModel {
     public function deleteUserById($id) {
         $sql = 'DELETE FROM users WHERE id = '.$id;
         return $this->delete($sql);
-
     }
 
     /**
@@ -93,5 +92,29 @@ class UserModel extends BaseModel {
         }
 
         return $users;
+    }
+
+    public function addPosts($input) {
+        $sql = "INSERT INTO `app_web1`.`posts` (`ten`, `noidung`, `user_id`) VALUES (" .
+                "'" . $input['ten'] . "', '".$input['noidung']."', '".$input['user_id']."')";
+
+        $user = $this->insert($sql);
+
+        return $user;
+    }
+
+    public function getPosts(){
+        $sql = "SELECT * FROM posts";
+        $users = $this->select($sql);
+
+        return $users;
+    }
+
+    public function deletePosts($id, $user_id){
+
+            $sql = 'DELETE FROM posts WHERE id ="' .$id . '"AND user_id ="'. $user_id .'"';
+            return $this->delete($sql);	
+
+        
     }
 }
