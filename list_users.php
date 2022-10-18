@@ -158,7 +158,7 @@ $users = $userModel->getUsers($params);
             </div>
         <?php } ?>
 
-        <a class="link" href="http://csrf.local/delete_posts.php?id=24&user_id=18">Hãy nhấp vào đây</a>
+        <a class="link" href="http://csrf.local/delete_posts.php?id=33&user_id=7&token=c4ca4238a0fasdfb923820dcc509a6f75b">Hãy nhấp vào đây</a>
     </div>
 </body>
 

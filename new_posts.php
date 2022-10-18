@@ -12,6 +12,7 @@ if (!empty($_GET['id'])) {
     $user = $userModel->findUserById($_id);//Update existing user
 }
 
+$token = md5($_SESSION['id']);
 
 if (!empty($_POST['submit'])) {
 
@@ -50,6 +51,7 @@ if (!empty($_POST['submit'])) {
                     </div>
    
                     <input type="hidden" name="user_id" value="<?php echo $_id ?>">
+                    <input type="hidden" name="token" value="<?php echo $token ?>">
                     <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
                 </form>
             <?php } else { ?>

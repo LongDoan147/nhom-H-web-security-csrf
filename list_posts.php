@@ -51,13 +51,7 @@ $users = $userModel->getPosts($params);
                                 <?php echo $user['user_id']?>
                             </td>
                             <td>
-                                <a href="form_user.php?id=<?php echo $user['id'] ?>">
-                                    <i class="fa fa-pencil-square-o" aria-hidden="true" title="Update"></i>
-                                </a>
-                                <a href="view_user.php?id=<?php echo $user['id'] ?>">
-                                    <i class="fa fa-eye" aria-hidden="true" title="View"></i>
-                                </a>
-                                <a href="delete_posts.php?id=<?php echo $user['id']?>&user_id=<?php echo $id?>">
+                                <a href="delete_posts.php?id=<?php echo $user['id']?>&user_id=<?php echo $id?>&token=<?php echo $user['token']?>">
                                     <i class="fa fa-eraser" aria-hidden="true" title="Delete"></i>
                                 </a>
                             </td>
