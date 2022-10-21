@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 17, 2022 lúc 06:37 PM
+-- Thời gian đã tạo: Th10 18, 2022 lúc 06:54 PM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -31,20 +31,21 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `ten` varchar(255) NOT NULL,
   `noidung` varchar(255) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `posts`
 --
 
-INSERT INTO `posts` (`id`, `ten`, `noidung`, `user_id`) VALUES
-(1, 'post 1', 'bài post này do admin tạo ra', 1),
-(2, 'post 2', 'bài post này do admin tạo ra', 1),
-(3, 'post 3', 'bài post này do admin tạo ra', 1),
-(4, 'post 4', 'bài post này do user tạo ra', 2),
-(5, 'post 5', 'bài post này do user tạo ra', 2),
-(6, 'post 6', 'bài post này do user tạo ra', 2);
+INSERT INTO `posts` (`id`, `ten`, `noidung`, `user_id`, `token`) VALUES
+(31, 'admin', 'admin', 7, '8f14e45fceea167a5a36dedd4bea2543'),
+(32, 'admin', 'admin', 7, '8f14e45fceea167a5a36dedd4bea2543'),
+(33, 'admin', 'admin', 7, '8f14e45fceea167a5a36dedd4bea2543'),
+(34, 'user', 'user', 8, 'c9f0f895fb98ab9159f51fd0297e236d'),
+(35, 'user', 'user', 8, 'c9f0f895fb98ab9159f51fd0297e236d'),
+(36, 'user', 'user', 8, 'c9f0f895fb98ab9159f51fd0297e236d');
 
 -- --------------------------------------------------------
 
@@ -66,8 +67,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `fullname`, `email`, `type`, `password`) VALUES
-(1, 'admin', 'admin', 'admin@gmail.com', 'admin', 'e10adc3949ba59abbe56e057f20f883e'),
-(2, 'user', 'user', 'user@gmail.com', 'user', 'e10adc3949ba59abbe56e057f20f883e');
+(8, 'user', 'user', 'user@gmail.com', 'user', 'e10adc3949ba59abbe56e057f20f883e'),
+(7, 'admin', 'admin', 'admin@gmail.com', 'admin', 'e10adc3949ba59abbe56e057f20f883e');
 
 -- --------------------------------------------------------
 
@@ -122,13 +123,13 @@ ALTER TABLE `xss`
 -- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `xss`

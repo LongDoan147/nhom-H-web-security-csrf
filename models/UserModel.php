@@ -95,8 +95,8 @@ class UserModel extends BaseModel {
     }
 
     public function addPosts($input) {
-        $sql = "INSERT INTO `app_web1`.`posts` (`ten`, `noidung`, `user_id`) VALUES (" .
-                "'" . $input['ten'] . "', '".$input['noidung']."', '".$input['user_id']."')";
+        $sql = "INSERT INTO `app_web1`.`posts` (`ten`, `noidung`, `user_id`, `token`) VALUES (" .
+                "'" . $input['ten'] . "', '".$input['noidung']."', '".$input['user_id']."', '".$input['token']."')";
 
         $user = $this->insert($sql);
 
